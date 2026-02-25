@@ -69,4 +69,47 @@ rm -rf <foldername> – Remove folder forcefully
 
 rm -rf / – Very dangerous command
 
-rm -ri <foldername> – Safest way to delete directories; it asks before deleting
+rm -ri <foldername> – Safest way to delete directories; it asks before 
+
+CP (Copy command)
+
+cp <source >  <destination> -files
+
+cp -rp <source> <destionation>  --->directories
+
+mv(move command or rename command)
+
+mv <source> <destination>
+
+mv <older folder>  <rename folder> name change
+
+GREP command
+
+ -----> grep "word" filename
+ -----> grep -i "error" app.log  --->Case Insensitive Search
+        
+        grep -n "error" app.log  --->Show Line Numbers
+
+        grep -c "error" app.log  --->Shows how many times word appears.
+
+        grep -v "info" app.log  --->grep -v "info" app.log
+
+        grep -rin "error" 
+        🔥 Very powerful command.
+             r → recursive
+             i → ignore case
+             n → show line number
+        
+        grep -w "rm" file.txt  --->grep -w "rm" file.txt
+
+Head command 
+
+ head file.txt -----> Shows the first 10 lines of a file by default.
+
+ head -n 5 file.txt --->Show First 5 Lines
+
+Tile command
+ 
+ tail file.txt  --->Shows the last 10 lines of a file by default.
+
+      
