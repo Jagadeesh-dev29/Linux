@@ -18,5 +18,13 @@ sudo su -
  Su -switch user
  - - load root's login enviornment
 
- # list commands
-   ls 
+# List Commands
+ ls -list  directory contents
+ ls -l --->Long listing
+ ls -lt --->Latest files
+ ls -ltr --->older files
+ ls -la   --->get . files
+ ls -h --->human readable format
+
+
+
