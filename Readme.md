@@ -146,3 +146,34 @@ mkdir -p devops/devops1/devops2
 - `tail file.txt` → Last 10 lines  
 - `tail -f app.log` → Live log monitoring  
 
+vim editor -> visually improved
+
+vim <file-name> -> open the file
+create and open the file
+
+colon mode
+===========
+:q -> quit
+:wq -> save the file
+:q! -> dont save any changes, force quit
+:set nu -> display numbers
+:<line-number> -> cursor goes particular line number
+:/<word-to-search> -> top to bottom
+:?<word-to-search> -> bottom to top
+:<line-number>d -> deletes that line
+:%d -> delete everything
+:noh -> dont highlight
+:<line-number>s/<word-to-find>/replace-word -> replaces first occurence
+:<line-number>s/<word-to-find>/replace-word/g -> all occurences
+:%s/<word-to-find>/replace-word/g -> all occurences in all lines
+
+Esc Mode
+=========
+gg -> takes to top of the file
+shift+g -> takes us to bottom of the file
+u -> undo
+ctrl+r -> redo
+dd -> deletes the line
+yy -> copy the line
+p -> paste below that line
+shift+p -> paste above that line
