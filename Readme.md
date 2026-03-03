@@ -146,6 +146,9 @@ mkdir -p devops/devops1/devops2
 - `tail file.txt` → Last 10 lines  
 - `tail -f app.log` → Live log monitoring  
 
+
+# VIM Editor
+
 vim editor -> visually improved
 
 vim <file-name> -> open the file
@@ -177,3 +180,148 @@ dd -> deletes the line
 yy -> copy the line
 p -> paste below that line
 shift+p -> paste above that line
+
+# 🔥 USER MANAGEMENT (DevOps Notes – Clean Version)
+👤 Basic Concepts
+Term	Meaning
+User	Individual login account (human/service)
+Group	Collection of users (team)
+Roles	Position (Admin, Dev, QA etc.)
+Permissions	Access rights (Read, Write, Execute)
+🔁 CRUD Operations (User Lifecycle)
+✅ Create
+
+Create user
+
+Create group
+
+Assign user to group
+
+✅ Update / Modify
+
+Change group
+
+Add/remove secondary groups
+
+Change password
+
+✅ Delete
+
+Remove from groups
+
+Lock account
+
+Delete user
+
+🟢 USER CREATION
+useradd <username>
+
+Example:
+
+useradd ramesh
+
+Check user:
+
+id ramesh
+
+View all users:
+
+cat /etc/passwd
+
+View all groups:
+
+cat /etc/group
+🟢 IMPORTANT CONCEPT
+
+✔ A Linux user has:
+
+One primary group
+
+Zero or more secondary groups
+
+✔ When you create a user:
+
+A group with same name is created automatically
+
+That becomes primary group
+
+🟢 GROUP MANAGEMENT
+
+Create group:
+
+groupadd devops
+
+Change primary group:
+
+usermod -g devops ramesh
+
+Add secondary group:
+
+usermod -aG testing ramesh
+
+Remove user from group:
+
+gpasswd -d ramesh testing
+🟢 PASSWORD MANAGEMENT
+
+Set password:
+
+passwd ramesh
+🟢 SSH CONFIGURATION
+
+SSH config file:
+
+/etc/ssh/sshd_config
+
+Check syntax:
+
+sshd -t
+
+By default in EC2:
+✔ Key-based authentication enabled
+❌ Password login disabled
+
+🟢 SUDO ACCESS
+
+File:
+
+/etc/sudoers
+
+Always edit using:
+
+visudo
+
+Add user to wheel group (RHEL):
+
+usermod -aG wheel ramesh
+
+Remove from group:
+
+gpasswd -d ramesh wheel
+🟢 FILE ARCHIVING
+
+Windows zip format:
+
+zip -r file.zip folder
+
+Linux tar format:
+
+Create archive:
+
+tar -cf file.tar.gz folder
+
+Extract:
+
+tar -xf file.tar.gz
+🔥 EMPLOYEE EXIT PROCESS (Real DevOps Practice)
+
+When employee leaves:
+
+1️⃣ Lock account immediately
+usermod -L ramesh
+2️⃣ Remove from all groups
+gpasswd -d ramesh devops
+3️⃣ Take backup
+tar -cf ramesh_backup.tar.gz /home/ramesh
+4️⃣ Delete user completely
+userdel -r ramesh
